@@ -1,2 +1,0 @@
-# elevatorjs
-elevator simulator
