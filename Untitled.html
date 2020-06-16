@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <div class="Form">
+        <div class="title">ELEVATOR</div>
+        <div class="button">
+        <p><button onclick="moveAt(6)">6 fl</button></p>
+        &nbsp;
+        <p><button onclick="moveAt(5)">5 fl</button></p>
+        &nbsp;
+        <p><button onclick="moveAt(4)">4 fl</button></p>
+        &nbsp;
+        <p><button onclick="moveAt(3)">3 fl</button></p>
+        &nbsp;
+        <p><button onclick="moveAt(2)">2 fl</button></p>
+        &nbsp;    
+        <p><button onclick="moveAt(1)">1 fl</button></p>
+        &emsp;
+        <p><button onclick="myWalk()">Lets walk</button></p>
+        &emsp;
+        <!--проверял работоспособность рандомайзера на функуии вызова-->
+        <p><button onclick="moveAt(1)">Call</button></p> 
+        &emsp;
+        <p><button id="btnclick">doll enter</button></p>
+        &emsp;
+        <p><button id="btnquit" onclick="myRagdollExit()">doll exit</button></p>
+        
+        <div class="audio">
+     <audio controls>
+       <source src="lift.mp3" type="audio/mpeg">
+     </audio>
+        </div>
+      </div>
+        <div class="form-block">
+         
+          
+          <div class="layers">
+            <div id="layer1"></div>
+            <div id="layer2"></div>
+            <div id="layer3"></div>
+            <div id="layer4"></div>
+            <div id="layer5"></div>
+            <div id="layer6">
+              <div id="ragdoll"></div> 
+            </div>
+          </div>
+          <div class="shutle">
+           <div id="cabin" style="top:115"></div>
+          </div>
+         
+        </div>       
+      </div>
+<script src="main.js"></script>
+<script src="jquery-3.5.1.slim.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $("#btnclick").click(function(){
+      $("#ragdoll").appendTo($('#cabin'))
+    });
+  });
+  $(document).ready(function(){
+    $("#btnquit").click(function(){
+      $("#cabin").RemoveTo($('#ragdoll'))
+    });
+  });
+
+</script>
+  </body>
+</html>
